@@ -1,6 +1,6 @@
 html.whiteTheme{
     --border: #FFD24C;
-    --body-bg: #ffffff;
+    --body-bg: linear-gradient(90deg, rgba(242,113,255,1) 0%, rgba(80,186,255,1) 100%, rgba(75,92,119,0) 100%);;
     --color: #000000;
 
     --panel-bg: #92B4EC;
