@@ -1,3 +1,5 @@
+//? VUE JS
+
 const app = Vue.createApp({
     data() {
         return {
@@ -13,5 +15,24 @@ const app = Vue.createApp({
         }
     }
 })
-
 app.mount('#app')
+
+
+
+
+
+//? Native JS
+
+let html = document.querySelector('html')
+let panel = document.querySelector('.panel')
+let themeBtn = document.querySelectorAll('.themeBtn')
+
+themeBtn[0].addEventListener('click', function(){
+    html.removeAttribute('class');
+    html.classList.add('whiteTheme')
+})
+themeBtn[1].addEventListener('click', function(){
+    html.removeAttribute('class');
+    html.classList.add('blackTheme');
+    panel.style.boxShadow = "none";
+})
