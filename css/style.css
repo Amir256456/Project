@@ -66,6 +66,8 @@ body{
     background: #080537;
 }
 
+/*! Sign Up / Sign In page */
+
 /*? Buttons Sign in and sign up */
 .container .panel{
     width: 350px;
@@ -171,5 +173,8 @@ body{
 button:hover{
     cursor: pointer;
 }
+
+
+
 
 

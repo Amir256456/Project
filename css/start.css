@@ -1,0 +1,50 @@
+/*! start page */
+body::before {
+    content: '';
+    position: fixed; 
+    left: 0; 
+    right: 0; 
+    top: 0; 
+    bottom: 0; 
+    z-index: -1; 
+    background: url(../img/back.jpg) center / cover no-repeat;
+}
+
+.container a{
+    width: 180px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25%; 
+    text-decoration: none;
+    font-size: 30px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background-color: var(--button-bg);
+    color: black;
+}
+
+.container a i{
+    margin-left: 5px;
+    margin-top: 5px;
+    font-size: 25px;
+    transition: all 0.3s;
+}
+
+.container p{
+    width: 60%;
+    margin-top: 30px;
+    font-size: 25px;
+}
+
+/*? hover */
+.container a:hover i{
+    margin-left: 15px;
+}
+
+@media all and (max-width: 600px) {
+    .container p{
+        font-size: 18px;
+    }     
+}
