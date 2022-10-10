@@ -6,24 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Вход / Регистрация</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/sign.css">
     <script src="https://unpkg.com/vue@3.0.2"></script> <!--* VUE JS-->
     <script src="https://kit.fontawesome.com/5bdca3e755.js" crossorigin="anonymous"></script> <!--* Font Awesome-->
   </head>
-  <body :class="{ whiteTheme: isWhiteThem }">
+  <body>
     <div id="app">
 
       <div class="container">
 
-        <div class="themes">
+        <!-- <div class="themes">
           <button class="themeBtn white"></button>
           <button class="themeBtn black"></button>
-        </div>
+        </div> -->
 
         <div class="panel">
 
           <div class="controller">
-            <button class="signInController" @click="toggleClass" :class="{ active: isSignInActive }">Войти</button>
-            <button class="signUpController" @click="toggleClass" :class="{ active: isSignUpActive }">Регистрация</button>
+            <button class="signInController" @click="toggleClassSignIn" :class="{ active: isSignInActive }">Войти</button>
+            <button class="signUpController" @click="toggleClassSignUp" :class="{ active: isSignUpActive }">Регистрация</button>
           </div>
 
           <div class="signUp" :class="{ active: isSignUpActive }">
@@ -37,18 +38,24 @@
             </div>
             <div class="item">
               <i class="fa-solid fa-lock"></i>
-              <input type="password" placeholder="Пароль" />
+              <input type="password" placeholder="Пароль..." />
             </div>
             <div class="item">
               <i class="fa-solid fa-lock"></i>
-              <input type="password" placeholder="Подтвердите пароль" />
+              <input type="password" placeholder="Подтвердите пароль..." />
             </div>
             <button class="signUpBtn"><a href="plan.html">Регистрация</a></button>
           </div>
 
           <div class="signIn" :class="{ active: isSignInActive }">
-            <input type="text" placeholder="Название магазина..." />
-            <input type="password" placeholder="Пароль" />
+            <div class="item">
+              <i class="fa-solid fa-shop"></i>
+              <input type="text" placeholder="Название магазина..." />
+            </div>
+            <div class="item">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" placeholder="Пароль..." />
+            </div>
             <button class="signInBtn"><a href="plan.html">Вход</a></button>
             <a href="#">Забыли пароль?</a>
           </div>

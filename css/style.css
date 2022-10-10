@@ -1,35 +1,9 @@
-html.whiteTheme{
-    --border: #FFD24C;
-    --body-bg: linear-gradient(90deg, rgba(242,113,255,1) 0%, rgba(80,186,255,1) 100%, rgba(75,92,119,0) 100%);;
-    --color: #000000;
-
-    --panel-bg: #92B4EC;
-    --button-bg: #FFE69A;
-    --button-active-bg: #FFD24C;
-}
-
-html.blackTheme{
-    --border: #29C7AC;
-    --body-bg: linear-gradient(90deg, rgba(8,5,55,1) 0%, rgba(57,58,69,1) 100%, rgba(43,71,115,0) 100%);
-    --color: #ffffff;
-
-    --panel-bg: #54123B;
-    --button-bg: #C02739;
-    --button-active-bg: #84142D;
-}
-
+/*! General settings*/
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'calibri';
-}
-
-body{
-    width: 100%;
-    height: 100%;
-    background: var(--body-bg);
-    overflow: hidden;
 }
 
 .container{
@@ -41,8 +15,32 @@ body{
     height: 100vh;
 }
 
-/*? Themes */
-.container .themes{
+/*? themes */
+html.whiteTheme{
+    --bg: #92B4EC;
+    --color: #000000;
+
+    --bg-contoller-button: #ffffff;
+    --border-sign-input: #000000;
+}
+
+/* html.blackTheme{
+
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+/*? themes changes */
+/* .container .themes{
     width: 100%;
     height: 80px;
     display: flex;
@@ -64,115 +62,9 @@ body{
 
 .container .themes .black{
     background: #080537;
-}
-
-/*! Sign Up / Sign In page */
-
-/*? Buttons Sign in and sign up */
-.container .panel{
-    width: 350px;
-    height: 450px;
-    background: var(--panel-bg);
-    border: 2px solid var(--border);
-    border-radius: 35px;
-    box-shadow: 0 0 6px 5px rgba(221, 221, 221, 1);
-}
-
-.container .panel .controller{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 15%;
-}
-
-.container .panel .controller button{
-    width: 100%;
-    height: 100%;
-    background: var(--button-bg);
-    color: var(--color);
-    text-align: center;
-    outline: none;
-    border: 1px solid transparent;
-    border-bottom-color: grey;
-    font-size: 20px;
-}
-
-.container .panel .controller .signInController{
-    border-top-left-radius: 35px;
-    border-right-color: grey;
-}
-
-.container .panel .controller .signUpController{
-    border-top-right-radius: 35px;
-    border-left-color: var(--border);
-}
+} */
 
 
-/*? Sign up panel*/
-.container .panel .signUp, .container .panel .signIn{
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 85%;
-    padding: 30px 0;
-}
-
-.container .panel .signUp .item{
-    width: 100%;
-    height: 38px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container .panel .signUp .item i{
-    z-index: 2;
-    margin-right: -25px;
-    color: var(--panel-bg);
-}
-
-.container .panel .signUp .item input, .container .panel .signIn input{
-    width: 60%;
-    height: 38px;
-    text-align: center;
-    outline: none;
-    border: 1px solid var(--border);
-    border-radius: 5px;
-    font-size: 15px;
-}
-
-.container .panel .signUp button, .container .panel .signIn button{
-    width: 50%;
-    height: 38px;
-    background: var(--button-active-bg);
-    color: var(--color);
-    border: 1px solid var(--border);
-    border-radius: 5px;
-    font-size: 15px;
-}
-
-/*? active*/
-.container .panel .controller button.active{
-    background: var(--button-active-bg);
-}
-
-.container .panel div.active{
-    display: flex;
-}
-
-/*? focus */
-
-.container .panel .signUp input:focus, .container .panel .signIn input:focus{
-    border: none;
-}
-
-/*? hover */
-button:hover{
-    cursor: pointer;
-}
 
 
 
