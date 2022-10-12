@@ -61,6 +61,8 @@ const app = Vue.createApp({
                     this.isPhoneError = true;
                     this.phoneError = "Номер длжен начинатся с +";
                 }
+            }else{
+                this.phoneError = "";
             }
         },
         password(e){
