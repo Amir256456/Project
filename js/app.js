@@ -62,6 +62,7 @@ const app = Vue.createApp({
                     this.phoneError = "Номер длжен начинатся с +";
                 }
             }else{
+                this.isPhoneError = false;
                 this.phoneError = "";
             }
         },
