@@ -34,16 +34,18 @@
             </div>
             <div class="item">
               <i class="fa-solid fa-phone"></i>
-              <input type="phone" placeholder="Телефон..." />
+              <input type="tel" placeholder="Телефон..." :value="phoneVal" @input="phone($event)" :class="{error: isPhoneError}" >
+            </div>
+            <p class="phoneError">{{phoneError}}</p>
+            <div class="item">
+                <i class="fa-solid fa-lock"></i>
+                <input id="password" type="password" placeholder="Пароль..." :value="passwordVal" @input="password($event)" :class="{error: isPasError}">
             </div>
             <div class="item">
-              <i class="fa-solid fa-lock"></i>
-              <input type="password" placeholder="Пароль..." />
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" placeholder="Подтвердите пароль..." :value="repeatPasswordVal" @input="repeatPassword($event)" :class="{error: isRepError}">
             </div>
-            <div class="item">
-              <i class="fa-solid fa-lock"></i>
-              <input type="password" placeholder="Подтвердите пароль..." />
-            </div>
+            <p class="passwordError">{{passwordError}}</p>
             <button class="signUpBtn"><a href="plan.html">Регистрация</a></button>
           </div>
 

@@ -96,7 +96,23 @@ body{
     color: var(--color);
 }
 
-/*? active*/
+/*? errors form*/
+
+/* password */
+.container .panel .signUp .item .error{
+    border-bottom-color: red;
+}
+
+.container .panel .signUp .passwordError{
+    color: red;
+}
+
+/* phone */
+.container .panel .signUp .phoneError{
+    color: red;
+}
+
+/*? active */
 .container .panel .controller button.active{
     background: var(--bg);
 }

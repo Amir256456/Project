@@ -5,7 +5,20 @@ const app = Vue.createApp({
         return {
             isWhiteTheme: true, 
             isSignInActive: true, 
-            isSignUpActive: false
+            isSignUpActive: false,
+
+            passwordVal: "",
+            isPasError: false,
+
+            repeatPasswordVal: "",
+            isRepError: false,
+
+            passwordError: "",
+
+            phoneVal: "",
+            isPhoneError: false,
+
+            phoneError: "",
         }
     },
     methods: {
@@ -20,7 +33,62 @@ const app = Vue.createApp({
                 this.isSignInActive = true;
                 this.isSignUpActive = false;
             }
-        }
+        },
+        phone(e){
+            e.preventDefault();
+            this.phoneVal = e.target.value;
+            if(this.phoneVal != ''){
+                if(this.phoneVal[0] == '+'){
+                    if(this.phoneVal.length <= 13){
+                        this.isPhoneError = false;
+
+                        for(let i = 0; i < this.phoneVal.length; i++){
+                            console.log(this.phoneVal.charCodeAt(i));
+                            if((this.phoneVal.charCodeAt(i) > 47 && this.phoneVal.charCodeAt(i) < 58) || this.phoneVal.charCodeAt(i) == 43){
+                                this.isPhoneError = false;
+                                this.phoneError = "";
+                            }else{
+                                this.isPhoneError = true;
+                                this.phoneError = "В номере должны быть только цифры и +";
+                                break;
+                            }
+                        }
+                    }else{
+                        this.isPhoneError = true;
+                        this.phoneError = "Вы ввели слишком много символов";
+                    }
+                }else{
+                    this.isPhoneError = true;
+                    this.phoneError = "Номер длжен начинатся с +";
+                }
+            }
+        },
+        password(e){
+            e.preventDefault();
+            this.passwordVal = e.target.value;
+
+            if(this.repeatPasswordVal != this.passwordVal){
+                this.passwordError = "Пароли не совпадают";
+                this.isPasError = true;
+            }else{
+                this.passwordError = "";
+                this.isPasError = false;
+                this.isRepError = false;
+            }
+        },
+        repeatPassword(e){
+            e.preventDefault();
+            this.repeatPasswordVal = e.target.value;
+
+            if(this.repeatPasswordVal != this.passwordVal){
+                this.passwordError = "Пароли не совпадают";
+                this.isRepError = true;
+            }else{
+                this.passwordError = "";
+                this.isPasError = false;
+                this.isRepError = false;
+            }
+        },
     }
 })
 app.mount('#app')
