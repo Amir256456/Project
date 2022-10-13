@@ -103,13 +103,13 @@ app.mount('#app')
 //? Native JS
 
 //? QR CODE
-var html5QrcodeScanner = new Html5QrcodeScanner(
-    "qr-reader", { fps: 10, qrbox: 250 });
-  html5QrcodeScanner.render(onScanSuccess);
-
+let header = document.querySelector("h1");
 function onScanSuccess(decodedText, decodedResult) {
-      qrCode = decodedText;
+      header.innerHTML = `Result: ${decodedText}`;
 }
+var html5QrcodeScanner = new Html5QrcodeScanner(
+  "qr-reader", { fps: 10, qrbox: 250 });
+html5QrcodeScanner.render(onScanSuccess);
 
 
 
