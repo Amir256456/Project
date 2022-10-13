@@ -1,0 +1,94 @@
+/*! Main Page */
+.container{
+    justify-content: start;
+}
+
+.container header{
+    width: 100%;
+    height: 100px;
+}
+
+.container header nav{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg);
+}
+
+/*? themes changes */
+.container nav .themes{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container nav .themes .themeBtn{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    border: 2px solid var(--border);
+    border-radius: 5px;
+}
+
+.container nav .themes .white{
+    background: #ffffff;
+}
+
+.container nav .themes .black{
+    background: #080537;
+}
+
+/*? language changes */
+.container nav .languages{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container nav .languages .languageBtn{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+
+.container .content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*? add product form */
+.container .content .addProduct{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+} 
+
+.container .content .addProduct .addProductForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*? QR code */
+#qr-shaded-region{
+    background: var(--bg);
+    color: var(--bg);
+}
+
+#qr-reader__dashboard{
+    display: none;
+}

@@ -102,19 +102,42 @@ app.mount('#app')
 
 //? Native JS
 
-// let html = document.querySelector('html')
-// let panel = document.querySelector('.panel')
-// let themeBtn = document.querySelectorAll('.themeBtn')
+//? QR CODE
+var html5QrcodeScanner = new Html5QrcodeScanner(
+    "qr-reader", { fps: 10, qrbox: 250 });
+  html5QrcodeScanner.render(onScanSuccess);
 
-// themeBtn[0].addEventListener('click', function(){
-//     html.removeAttribute('class');
-//     html.classList.add('whiteTheme')
-//     document.cookie = "theme=0";
-// })
-// themeBtn[1].addEventListener('click', function(){
-//     html.removeAttribute('class');
-//     html.classList.add('blackTheme');
-//     panel.style.boxShadow = "none";
-//     document.cookie = "theme=1";
-// })
+function onScanSuccess(decodedText, decodedResult) {
+      qrCode = decodedText;
+}
+
+
+
+//? THEME CHANGE
+let html = document.querySelector('html')
+let panel = document.querySelector('.panel')
+let themeBtn = document.querySelectorAll('.themeBtn')
+
+themeBtn[0].addEventListener('click', function(){
+    html.removeAttribute('class');
+    html.classList.add('whiteTheme')
+    document.cookie = "theme=0";
+})
+themeBtn[1].addEventListener('click', function(){
+    html.removeAttribute('class');
+    html.classList.add('blackTheme');
+    panel.style.boxShadow = "none";
+    document.cookie = "theme=1";
+})
+
+
+
+
+let test = document.querySelectorAll('img')
+
+for(var i = 0; i < test.length; i++){
+    if(test[i].getAttribute('alt') == 'Info icon');
+    test[i].style.display = "none";
+}
+
 

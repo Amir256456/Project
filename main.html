@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="whiteTheme">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +7,7 @@
     <title>Главная</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://unpkg.com/html5-qrcode"></script> <!--* QR code-->
     <script src="https://unpkg.com/vue@3.0.2"></script> <!--* VUE JS-->
     <script src="https://kit.fontawesome.com/5bdca3e755.js" crossorigin="anonymous"></script> <!--* Font Awesome-->
 </head>
@@ -15,31 +16,45 @@
     <div class="container">
 
         <header>
-            <div class="themes">
-
-            </div>
-
-            <div class="languages">
-                
-            </div>
+            <nav>
+                <div class="themes">
+                    <button class="themeBtn white"></button>
+                    <button class="themeBtn black"></button>
+                  </div>
+    
+                <div class="languages">
+                    <button class="languageBtn ru">RU</button>
+                    <button class="languageBtn uz">UZ</button>
+                </div>
+            </nav>
         </header>
 
-        <div class="addProduct">
-            <div class="qrCode">
-
+        <div class="content">
+            <div class="addProduct">
+                <div class="qrCode">
+                    <div id="qr-reader" style="width: 350px" class="qrCode"></div>
+                </div>
+                <div class="addProductForm">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                </div>
             </div>
-            <div class="addProductForm">
-
+    
+            <div class="table">
+                <table>
+    
+                </table>
             </div>
         </div>
 
-        <div class="table">
-            <table>
 
-            </table>
-        </div>
 
     </div>
 
+    <script src="js/app.js"></script>
 </body>
 </html>

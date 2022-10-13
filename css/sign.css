@@ -82,7 +82,7 @@ body{
     color: var(--color);
     border: none;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .container .panel .signUp button a, .container .panel .signIn button a{
@@ -119,11 +119,6 @@ body{
 
 .container .panel div.active{
     display: flex;
-}
-
-/*? hover */
-button:hover{
-    cursor: pointer;
 }
 
 
