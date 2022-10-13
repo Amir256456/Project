@@ -103,7 +103,7 @@ app.mount('#app')
 //? Native JS
 
 //? QR CODE
-let header = document.querySelector("h1");
+let header = document.querySelector(".qr");
 function onScanSuccess(decodedText, decodedResult) {
       header.innerHTML = `Result: ${decodedText}`;
 }
