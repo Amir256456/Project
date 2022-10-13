@@ -84,10 +84,10 @@
 }
 
 /*? QR code */
-#qr-shaded-region{
+/* #qr-shaded-region{
     background: var(--bg);
     color: var(--bg);
-}
+} */
 
 /* #qr-reader__dashboard{
     display: none;

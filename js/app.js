@@ -133,11 +133,11 @@ themeBtn[1].addEventListener('click', function(){
 
 
 
-let test = document.querySelectorAll('img')
+// let test = document.querySelectorAll('img')
 
-for(var i = 0; i < test.length; i++){
-    if(test[i].getAttribute('alt') == 'Info icon');
-    test[i].style.display = "none";
-}
+// for(var i = 0; i < test.length; i++){
+//     if(test[i].getAttribute('alt') == 'Info icon');
+//     test[i].style.display = "none";
+// }
 
 
