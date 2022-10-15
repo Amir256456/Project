@@ -3,9 +3,11 @@
 const app = Vue.createApp({
     data() {
         return {
-            isWhiteTheme: true, 
             isSignInActive: true, 
             isSignUpActive: false,
+
+            isPanelActive: false,
+            isContentActive: false,
 
             passwordVal: "",
             isPasError: false,
@@ -34,6 +36,22 @@ const app = Vue.createApp({
                 this.isSignUpActive = false;
             }
         },
+        panel(a){
+            this.isContentActive = true;
+            if(a == 1){
+                this.isSignInActive = true;
+                this.isSignUpActive = false;
+                this.isPanelActive = true;
+            }else if(a == 2){
+                this.isSignUpActive = true;
+                this.isSignInActive = false;
+                this.isPanelActive = true;
+            }else{
+                this.isPanelActive = false;
+                this.isContentActive = false;
+            }
+
+        },
         phone(e){
             e.preventDefault();
             this.phoneVal = e.target.value;
@@ -49,7 +67,7 @@ const app = Vue.createApp({
                                 this.phoneError = "";
                             }else{
                                 this.isPhoneError = true;
-                                this.phoneError = "В номере должны быть только цифры и +";
+                                this.phoneError = "В номере могут быть только цифры и +";
                                 break;
                             }
                         }
@@ -59,7 +77,7 @@ const app = Vue.createApp({
                     }
                 }else{
                     this.isPhoneError = true;
-                    this.phoneError = "Номер длжен начинатся с +";
+                    this.phoneError = "Номер может начинатся только с +";
                 }
             }else{
                 this.isPhoneError = false;
@@ -103,13 +121,13 @@ app.mount('#app')
 //? Native JS
 
 //? QR CODE
-let header = document.querySelector(".qr");
-function onScanSuccess(decodedText, decodedResult) {
-      header.innerHTML = `Result: ${decodedText}`;
-}
-var html5QrcodeScanner = new Html5QrcodeScanner(
-  "qr-reader", { fps: 10, qrbox: 250 });
-html5QrcodeScanner.render(onScanSuccess);
+// let header = document.querySelector(".qr");
+// function onScanSuccess(decodedText, decodedResult) {
+//       header.innerHTML = `Result: ${decodedText}`;
+// }
+// var html5QrcodeScanner = new Html5QrcodeScanner(
+//   "qr-reader", { fps: 10, qrbox: 250 });
+// html5QrcodeScanner.render(onScanSuccess);
 
 
 

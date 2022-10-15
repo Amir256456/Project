@@ -10,23 +10,31 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     width: 100%;
     height: 100vh;
 }
 
 /*? themes */
 html.whiteTheme{
-    --bg: #92B4EC;
+    --div-bg: #cae9ff;
+    --btn-bg: #f9c74f;
+
     --color: #000000;
 
-    --bg-contoller-button: #ffffff;
-    --border-sign-input: #000000;
+    --icon-color: #f9c74f;
+    --error: #ff5a5f;
 }
 
-/* html.blackTheme{
+html.blackTheme{
+    --div-bg: #0d1b2a;
+    --btn-bg: #d62828;
 
-} */
+    --color: #ffffff;
+
+    --icon-color: #d62828;
+    --error: #ff5a5f;
+
+}
 
 
 /*? hover */

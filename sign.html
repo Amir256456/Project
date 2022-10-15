@@ -15,49 +15,7 @@
 
       <div class="container">
 
-        <div class="panel">
 
-          <div class="controller">
-            <button class="signInController" @click="toggleClassSignIn" :class="{ active: isSignInActive }">Войти</button>
-            <button class="signUpController" @click="toggleClassSignUp" :class="{ active: isSignUpActive }">Регистрация</button>
-          </div>
-
-          <div class="signUp" :class="{ active: isSignUpActive }">
-            <div class="item">
-              <i class="fa-solid fa-shop"></i>
-              <input type="text" placeholder="Название магазина..." />
-            </div>
-            <div class="item">
-              <i class="fa-solid fa-phone"></i>
-              <input type="tel" placeholder="Телефон..." :value="phoneVal" @input="phone($event)" :class="{error: isPhoneError}" >
-            </div>
-            <p class="phoneError">{{phoneError}}</p>
-            <div class="item">
-                <i class="fa-solid fa-lock"></i>
-                <input id="password" type="password" placeholder="Пароль..." :value="passwordVal" @input="password($event)" :class="{error: isPasError}">
-            </div>
-            <div class="item">
-                <i class="fa-solid fa-lock"></i>
-                <input type="password" placeholder="Подтвердите пароль..." :value="repeatPasswordVal" @input="repeatPassword($event)" :class="{error: isRepError}">
-            </div>
-            <p class="passwordError">{{passwordError}}</p>
-            <button class="signUpBtn"><a href="plan.html">Регистрация</a></button>
-          </div>
-
-          <div class="signIn" :class="{ active: isSignInActive }">
-            <div class="item">
-              <i class="fa-solid fa-shop"></i>
-              <input type="text" placeholder="Название магазина..." />
-            </div>
-            <div class="item">
-              <i class="fa-solid fa-lock"></i>
-              <input type="password" placeholder="Пароль..." />
-            </div>
-            <button class="signInBtn"><a href="plan.html">Вход</a></button>
-            <a href="#">Забыли пароль?</a>
-          </div>
-
-        </div>
 
       </div>
 
