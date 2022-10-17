@@ -3,6 +3,11 @@
 const app = Vue.createApp({
     data() {
         return {
+            html: document.querySelector('html'),
+
+            isLightThemeBtnActive: true,
+            isDarkThemeBtnActive: false,
+
             isSignInActive: true, 
             isSignUpActive: false,
 
@@ -24,6 +29,22 @@ const app = Vue.createApp({
         }
     },
     methods: {
+        changeTheme(a){
+            if(a == 1){
+                this.isLightThemeBtnActive = true;
+                this.isDarkThemeBtnActive = false;
+				localStorage.setItem('theme', "lightTheme");
+                this.html.removeAttribute('class');
+                this.html.classList.add('lightTheme');
+            }else{
+                this.isLightThemeBtnActive = false;
+                this.isDarkThemeBtnActive = true;
+				localStorage.setItem('theme', "darkTheme");
+                this.html.removeAttribute('class');
+                this.html.classList.add('darkTheme');
+            }
+
+        },
         toggleClassSignUp(){ 
             if(!this.isSignUpActive){
                 this.isSignUpActive = true;
@@ -110,7 +131,11 @@ const app = Vue.createApp({
                 this.isRepError = false;
             }
         },
-    }
+    },
+     mounted(){
+        document.querySelector('html').removeAttribute('class');
+        document.querySelector('html').classList.add(`${localStorage.getItem('theme')}`);
+     }
 })
 app.mount('#app')
 
@@ -120,6 +145,9 @@ app.mount('#app')
 
 //? Native JS
 
+
+
+
 //? QR CODE
 // let header = document.querySelector(".qr");
 // function onScanSuccess(decodedText, decodedResult) {
@@ -128,27 +156,6 @@ app.mount('#app')
 // var html5QrcodeScanner = new Html5QrcodeScanner(
 //   "qr-reader", { fps: 10, qrbox: 250 });
 // html5QrcodeScanner.render(onScanSuccess);
-
-
-
-//? THEME CHANGE
-let html = document.querySelector('html')
-let panel = document.querySelector('.panel')
-let themeBtn = document.querySelectorAll('.themeBtn')
-
-themeBtn[0].addEventListener('click', function(){
-    html.removeAttribute('class');
-    html.classList.add('whiteTheme')
-    document.cookie = "theme=0";
-})
-themeBtn[1].addEventListener('click', function(){
-    html.removeAttribute('class');
-    html.classList.add('blackTheme');
-    panel.style.boxShadow = "none";
-    document.cookie = "theme=1";
-})
-
-
 
 
 // let test = document.querySelectorAll('img')

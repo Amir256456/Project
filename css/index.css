@@ -1,13 +1,13 @@
 /*! start page */
 
-html.whiteTheme{
-    background: url(../img/backStart.jpg);
+html.lightTheme{
+    background: url(../img/backLightIndex.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-html.blackTheme{
-    background: url(../img/backStartDark.jpg);
+html.darkTheme{
+    background: url(../img/backDarkIndex.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -16,97 +16,41 @@ body{
     width: 100%;
     height: 100%;
     overflow: hidden;
-}
-
-.container header{
-    width: 100%;
-    height: 100px;
-}
-
-.container header nav{
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--div-bg);
-}
-
-/*? themes changes */
-.container nav .themes{
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container nav .themes .themeBtn{
-    width: 30px;
-    height: 30px;
-    margin: 10px;
-    border: 2px solid var(--border);
-    border-radius: 5px;
-}
-
-.container nav .themes .white{
-    background: #ffffff;
-}
-
-.container nav .themes .black{
-    background: #080537;
-}
-
-/*? language changes */
-.container nav .languages{
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container nav .languages .languageBtn{
-    width: 30px;
-    height: 30px;
-    margin: 10px;
-    background: none;
-    border: none;
-    outline: none;
-    font-size: 20px;
-    color: var(--color);
-}
-
+}  
 
 .container .content{
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 100px);
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
 }
 
 /*? text */
 .container .content .text{
-    width: 30%;
+    width: 500px;
     height: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 150px;
     color: var(--color);
+}
+
+.container .content .text h1{
+    font-size: 30px;
 }
 
 .container .content .text p{
     margin-top: 20px;
-    font-size: 25px;
+    font-size: 22px;
+    line-height: 1.6em;
 }
 
 /*? buttons */
 .container .content .buttons{
     width: 320px;
-    margin-top: 150px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -117,7 +61,7 @@ body{
     height: 45px;
     background: var(--btn-bg);
     color: var(--color);
-    font-size: 22px;
+    font-size: 20px;
     outline: none;
     border: 1px solid transparent;
     border-radius: 5px;
@@ -139,7 +83,7 @@ body{
     position: absolute;
     margin-top: 5px;
     margin-left: 5px;
-    color: var(--icon-color);
+    color: var(--color);
     font-size: 25px;
 }
 
@@ -188,7 +132,7 @@ body{
     color: var(--icon-color);
 }
 
-.container .panel .signUp .item input, .container .panel .signIn input{
+.container .panel .signUp .item input, .container .panel .signIn .item input{
     width: 60%;
     height: 38px;
     text-align: center;
@@ -197,7 +141,7 @@ body{
     border: 1px solid transparent;
     border-bottom-color: var(--border-sign-input);
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 14px;
     outline: none;
 }
 
@@ -227,6 +171,38 @@ body{
     margin-top: 5px;
     font-size: 15px;
     transition: all 0.3s;
+}
+
+.container .panel .signIn .item .checkBox{
+  display: none;
+}
+ 
+.container .panel .signIn .item label{
+  color: var(--color);
+  cursor: default;
+  line-height: 20px;
+  vertical-align: middle;
+}
+ 
+.container .panel .signIn .item label:before{
+  content: " ";
+  color: var(--icon-color);
+  display: inline-block;
+  margin-right: 15px;
+  position: relative;
+  text-align: center;
+  text-indent: 0px;
+  font-size: 14px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: 1px solid #ffffff;
+  border-image: initial;
+  vertical-align: middle;
+}
+ 
+.container .panel .signIn .item input.checkBox:checked + label:before{
+    content: "✔";
 }
 
 /*? errors form*/
@@ -267,98 +243,126 @@ body{
     margin-left: 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*? adoptation */
-/* @media all and (max-width: 800px) {
-    .container p{
-        font-size: 21px;
-    }     
+.container nav .themes .themeBtn.active:hover, .container header nav .languages .languageBtn.active:hover{
+    cursor: default;
 }
 
-@media all and (max-width: 650px) {
-    .container p{
+
+
+/* ? Adaptation */
+@media all and (max-width: 700px) {
+    .container .content .text{
+        width: 350px;
+    }
+
+    .container .content .text h1{
+        font-size: 25px;
+    }
+
+    .container .content .text p{
         font-size: 18px;
-    }     
-}
-
-@media all and (max-width: 550px) {
-    .container .text{
-        width: 80%;
-        height: 60%;
-        padding: 25px;
+    } 
+    
+    .container .content .buttons{
+        width: 260px;
     }
-    .container p{
-        margin-top: 10px;
+    
+    .container .content .buttons button{
+        width: 120px;
+        height: 38px;
         font-size: 18px;
-    }     
+    } 
 }
 
-@media all and (max-width: 300px) {
-    .container .text{
-        width: 90%;
-        height: 60%;
-        padding: 15px;
+@media all and (max-width: 420px) {
+    .container .content .text{
+        width: 270px;
     }
-    .container p{
-        margin-top: 7px;
-        font-size: 16px;
-    }     
-}
 
-@media all and (max-height: 670px) {
-    .container .text{
-        margin-top: 50px;
-        width: 50%;
-        height: 60%;
-        padding: 15px;
+    .container .content .text h1{
+        font-size: 18px;
     }
-    .container p{
-        margin-top: 7px;
-        font-size: 22px;
-    }     
-} */
+
+    .container .content .text p{
+        font-size: 15px;
+    } 
+    
+    .container .content .buttons{
+        width: 200px;
+    }
+    
+    .container .content .buttons button{
+        width: 90px;
+        height: 29px;
+        font-size: 14px;
+    }
+    
+} 
+
+@media all and (max-width: 280px) {
+    .container .content .text{
+        width: 220px;
+    }
+
+    .container .content .text h1{
+        font-size: 15px;
+    }
+
+    .container .content .text p{
+        font-size: 12px;
+    } 
+    
+    .container .content .buttons{
+        width: 200px;
+    }
+    
+    .container .content .buttons button{
+        width: 90px;
+        height: 29px;
+        font-size: 14px;
+    }
+    
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

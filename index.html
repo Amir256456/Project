@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="blackTheme">
+<html lang="ru" class="lightTheme">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,47 +14,48 @@
 
     <div id="app">
 
-    <div class="container">
-      <header>
-        <nav>
-            <div class="themes">
-                <button class="themeBtn white" @click="changeTheme()"></button>
-                <button class="themeBtn black"></button>
+        <header>
+          <nav>
+              <div class="themes">
+                <button class="themeBtn light" :class="{active: isLightThemeBtnActive}" @click="changeTheme(1)"></button>
+                <button class="themeBtn black" :class="{active: isDarkThemeBtnActive}" @click="changeTheme(2)"></button>
+                </div>
+
+              <div class="languages">
+                  <button class="languageBtn ru active">RU</button>
+                  <button class="languageBtn uz">UZ</button>
               </div>
+          </nav>
+        </header>
 
-            <div class="languages">
-                <button class="languageBtn ru">RU</button>
-                <button class="languageBtn uz">UZ</button>
-            </div>
-        </nav>
-      </header>
+        <div class="container">
 
-      <div class="content" :class="{active: isContentActive}">
-        <div class="text">
-          <h1>Автоматизируйте свой магазин!</h1>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe in
-            blanditiis sequi cum veritatis, deserunt quibusdam. Magni ullam,
-            doloremque a fugiat vitae minus molestias incidunt soluta? Quidem vero
-            quos adipisci aliquam libero unde! A harum, repellendus dolorum
-            doloribus aspernatur natus?
-          </p>
+        <div class="content" :class="{active: isContentActive}">
+          <div class="text">
+            <h1>Автоматизируйте свой магазин!</h1>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe in
+              blanditiis sequi cum veritatis, deserunt quibusdam. Magni ullam,
+              doloremque a fugiat vitae minus molestias incidunt soluta? Quidem vero
+              quos adipisci aliquam libero unde! A harum, repellendus dolorum
+              doloribus aspernatur natus?
+            </p>
+          </div>
+
+          <div class="buttons">
+
+            <button @click="panel(1)">Вход</button>
+            <button @click="panel(2)">Регистрция</button>
+
+          </div>
         </div>
-
-        <div class="buttons">
-
-          <button @click="panel(1)">Войти</button>
-          <button @click="panel(2)">Регистрция</button>
-
-        </div>
-      </div>
 
         <div class="panel" :class="{active: isPanelActive}">
 
           <i class="fa-solid fa-xmark" @click="panel(0)"></i>
 
           <div class="controller">
-            <button class="signInController" @click="toggleClassSignIn" :class="{ active: isSignInActive }">Войти</button>
+            <button class="signInController" @click="toggleClassSignIn" :class="{ active: isSignInActive }">Вход</button>
             <button class="signUpController" @click="toggleClassSignUp" :class="{ active: isSignUpActive }">Регистрация</button>
           </div>
 
@@ -89,19 +90,19 @@
               <i class="fa-solid fa-lock"></i>
               <input type="password" placeholder="Пароль..." />
             </div>
+            <div class="item">
+              <input type="checkbox" class="checkBox" id="checkbox">
+              <label for="checkbox">Запомнить меня</label>
+            </div>
+            
             <button class="signInBtn"><a href="plan.html">Вход <i class="fa-solid fa-chevron-right"></i></a></button>
             <a href="#">Забыли пароль?</a>
           </div>
 
         </div>
 
-
-
-
-
+      </div>
     </div>
-    
-</div>
     <script src="js/app.js"></script>
   </body>
 </html>

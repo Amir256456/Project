@@ -1,9 +1,34 @@
 /*! General settings*/
+/*? themes */
+html.lightTheme{
+    --div-bg: #cae9ff;
+    --btn-bg: #f9c74f;
+
+    --color: #000000;
+    --opposite-color: #ffffff;
+
+    --icon-color: #f9c74f;
+    --error: #ff5a5f;
+}
+
+html.darkTheme{
+    --div-bg: #0d1b2a;
+    --btn-bg: #d62828;
+
+    --color: #ffffff;
+    --opposite-color: #000000;
+
+    --icon-color: #d62828;
+    --error: #ff5a5f;
+
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'calibri';
+    transition: all 0.3s;
 }
 
 .container{
@@ -11,37 +36,83 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    padding: 0 30px;
 }
 
-/*? themes */
-html.whiteTheme{
-    --div-bg: #cae9ff;
-    --btn-bg: #f9c74f;
-
-    --color: #000000;
-
-    --icon-color: #f9c74f;
-    --error: #ff5a5f;
+/*? header */ 
+header{
+    width: 100%;
+    height: 100px;
 }
 
-html.blackTheme{
-    --div-bg: #0d1b2a;
-    --btn-bg: #d62828;
-
-    --color: #ffffff;
-
-    --icon-color: #d62828;
-    --error: #ff5a5f;
-
+header nav{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--div-bg);
 }
 
+/*? themes changes */ 
+header nav .themes{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav .themes .themeBtn{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    border: 2px solid var(--border);
+    border-radius: 5px;
+}
+
+header nav .themes .light{
+    background: #cae9ff;
+}
+
+header nav .themes .black{
+    background: #0d1b2a;
+}
+
+/*? language changes */ 
+header nav .languages{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav .languages .languageBtn{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    color: var(--color);
+}
+
+/*? active */ 
+header nav .languages .languageBtn.active{
+    color: var(--opposite-color);
+}
 
 /*? hover */
 button:hover{
     cursor: pointer;
 }
 
+header nav .themes .themeBtn.active:hover, header nav .languages .languageBtn.active:hover{
+    cursor: default !important;
+}
 
 
 
