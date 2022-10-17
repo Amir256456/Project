@@ -39,6 +39,8 @@ body{
 }
 
 .container .content .text h1{
+    width: 100%;
+    text-align: left;
     font-size: 30px;
 }
 
@@ -252,52 +254,69 @@ body{
 /* ? Adaptation */
 @media all and (max-width: 700px) {
     .container .content .text{
-        width: 350px;
+        width: 90%;
+        height: 50%;
     }
+}
 
+@media all and (max-width: 550px) {
     .container .content .text h1{
-        font-size: 25px;
+        font-size: 22px;
+    }  
+} 
+
+@media all and (max-width: 400px) {
+    .container .content .text{
+        width: 95%;
+        height: 20%;
+    }
+    .container .content .text h1{
+        font-size: 20px;
     }
 
     .container .content .text p{
         font-size: 18px;
-    } 
-    
+    }  
+
     .container .content .buttons{
-        width: 260px;
+        margin-top: -150px;
+        width: 300px;
     }
     
     .container .content .buttons button{
-        width: 120px;
-        height: 38px;
+        width: 140px;
+        height: 40px;
         font-size: 18px;
-    } 
-}
-
-@media all and (max-width: 420px) {
-    .container .content .text{
-        width: 270px;
     }
+} 
 
+@media all and (max-width: 350px) {
+    .container .content .text{
+        width: 95%;
+        height: 5%;
+    }
     .container .content .text h1{
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .container .content .text p{
         font-size: 15px;
-    } 
-    
+    }  
+
     .container .content .buttons{
-        width: 200px;
+        margin-top: -150px;
+        width: 250px;
     }
     
     .container .content .buttons button{
-        width: 90px;
-        height: 29px;
-        font-size: 14px;
-    }
-    
+        width: 120px;
+        height: 35px;
+        font-size: 16px;
+    }   
 } 
+
+
+
 
 @media all and (max-width: 280px) {
     .container .content .text{
@@ -323,7 +342,6 @@ body{
     }
     
 } 
-
 
 
 
