@@ -154,7 +154,6 @@ body{
     color: var(--color);
     border: none;
     border-radius: 5px;
-    font-size: 20px;
 }
 
 .container .panel .signUp button a, .container .panel .signIn button a{
@@ -257,6 +256,10 @@ body{
         width: 90%;
         height: 50%;
     }
+
+    .container .panel{
+        top: calc(50% - 200px);
+    }
 }
 
 @media all and (max-width: 550px) {
@@ -288,6 +291,27 @@ body{
         height: 40px;
         font-size: 18px;
     }
+
+    .container .panel{
+        width: 270px;
+        height: 425px;
+    }
+
+    .container .panel .signUp .item input, .container .panel .signIn .item input{
+        width: 80%;
+    }
+
+    .container .panel .controller button{
+        font-size: 18px;
+    }
+    
+    .container .panel .signUp button a, .container .panel .signIn button a{
+        font-size: 18px;
+    }
+    
+    .container .panel .signUp button a i, .container .panel .signIn button a i{
+        font-size: 13px;
+    }
 } 
 
 @media all and (max-width: 350px) {
@@ -309,10 +333,21 @@ body{
     }
     
     .container .content .buttons button{
-        width: 120px;
-        height: 35px;
         font-size: 16px;
-    }   
+    }  
+
+    .container .panel .controller button{
+        font-size: 16px;
+    }
+    
+    .container .panel .signUp button a, .container .panel .signIn button a{
+        font-size: 16px;
+    }
+    
+    .container .panel .signUp button a i, .container .panel .signIn button a i{
+        margin-top: 4px;
+        font-size: 11px;
+    }
 } 
 
 
@@ -339,6 +374,36 @@ body{
         width: 90px;
         height: 29px;
         font-size: 14px;
+    }
+
+    .container .panel{
+        width: 210px;
+        height: 370px;
+    }
+
+    .container .panel .signUp .item input, .container .panel .signIn .item input{
+        width: 90%;
+    }
+
+    .container .panel .signUp .item input, .container .panel .signIn .item input{
+        width: 80%;
+    }
+
+    .container .content .buttons button{
+        font-size: 14px;
+    }  
+
+    .container .panel .controller button{
+        font-size: 14px;
+    }
+    
+    .container .panel .signUp button a, .container .panel .signIn button a{
+        font-size: 14px;
+    }
+    
+    .container .panel .signUp button a i, .container .panel .signIn button a i{
+        margin-top: 4px;
+        font-size: 10px;
     }
     
 } 
